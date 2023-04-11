@@ -1,0 +1,37 @@
+@use "./functionSASS/function.scss" as *;
+
+.App {
+  //
+  .header {
+    padding-inline: 1rem;
+    padding-block: 3rem;
+    background-color: hsl(var(--Primary-100));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      margin: 0;
+      font-size: 1.5rem;
+      color: hsl(var(--Primary-300));
+      //   font-weight: 700;
+    }
+
+    .toggle__btn {
+      color: hsl(var(--Primary-300));
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+  }
+
+  main {
+    width: min(90%, rem(1000));
+    margin-inline: auto;
+  }
+}

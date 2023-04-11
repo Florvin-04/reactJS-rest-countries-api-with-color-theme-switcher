@@ -1,0 +1,122 @@
+@use "../functionSASS/function.scss" as *;
+
+.filters__container {
+  margin-top: 1.5rem;
+
+  @include breakpoint(medium) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search__form {
+    //
+    margin-top: 1rem;
+
+    @include breakpoint(medium) {
+      margin-top: 0;
+    }
+
+    .search__container {
+      display: block;
+      // outline: 1px solid re>d;
+      // width: 100%;
+      color: hsl(var(--Primary-300));
+      position: relative;
+
+      > input {
+        width: 100%;
+        background-color: hsl(var(--Primary-100));
+        border: none;
+        padding: 1.2em 1em 1.2em 4.5em;
+        color: hsl(var(--Primary-300));
+        font-size: 1.1rem;
+        border-radius: 0.5rem;
+
+        &:focus + .input__placeholder > .placeholder__name,
+        &:not(:placeholder-shown) + .input__placeholder > .placeholder__name {
+          transform: translate(-10%, -120%);
+          font-size: 0.7rem;
+        }
+      }
+
+      .input__placeholder {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 50%;
+        transform: translate(0, -50%);
+        margin-left: 2rem;
+        gap: 2rem;
+        pointer-events: none;
+
+        .placeholder__name {
+          transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      }
+    }
+  }
+
+  .region__selection--parent {
+    position: relative;
+
+    .arrow-down {
+      color: hsl(var(--Primary-300));
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 10%;
+      pointer-events: none;
+    }
+    .region__selection {
+      padding: 1em 5em 1em 1em;
+      background-color: hsl(var(--Primary-100));
+      border-color: hsl(var(--Primary-100));
+      color: hsl(var(--Primary-300));
+      cursor: pointer;
+      border-radius: 0.5rem;
+      appearance: none;
+      font-size: 1.1rem;
+    }
+  }
+
+  .dropdown__region {
+    position: relative;
+    // outline: 1px solid red;
+    // width: 10rem;
+    display: inline-block;
+
+    .filter__region {
+      padding: 1em 5em 1em 1em;
+      text-align: left;
+      background-color: hsl(var(--Primary-100));
+      border-color: hsl(var(--Primary-100));
+      color: hsl(var(--Primary-300));
+      cursor: pointer;
+      border-radius: 0.5rem;
+      font-size: 1.1rem;
+      width: 20rem;
+    }
+    .region__list {
+      margin-top: 0.4rem;
+      padding-block: 1rem;
+      padding-left: 1rem;
+      color: hsl(var(--Primary-300));
+      background-color: hsl(var(--Primary-100));
+      border-color: hsl(var(--Primary-100));
+      color: hsl(var(--Primary-300));
+      cursor: pointer;
+      border-radius: 0.5rem;
+      position: absolute;
+      width: 100%;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      &--item {
+      }
+    }
+  }
+}
