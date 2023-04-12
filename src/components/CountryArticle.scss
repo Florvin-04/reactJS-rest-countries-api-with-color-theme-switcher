@@ -1,0 +1,114 @@
+@use "../functionSASS/function.scss" as *;
+
+.backtohome--btn {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  background-color: hsl(var(--Primary-100));
+  border: none;
+  color: hsl(var(--Primary-300));
+  padding: 0.5em 1em 0.5em 3em;
+  position: relative;
+  cursor: pointer;
+
+  .btn-icon {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+    display: block;
+  }
+}
+
+.article__country {
+  color: hsl(var(--Primary-300));
+  padding-bottom: 1em;
+
+  @include breakpoint(large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+
+  &--img {
+    height: 25rem;
+
+    @include breakpoint(large) {
+      height: 100%;
+    }
+
+    > img {
+      object-fit: contain;
+      height: inherit;
+      width: 100%;
+    }
+  }
+
+  &--details {
+    //
+    margin-top: 3rem;
+    .country--name {
+      font-size: 1.8rem;
+    }
+
+    .details__container {
+      //
+
+      > p + p {
+        margin-top: 0.5rem;
+      }
+
+      .country--detail {
+        font-weight: 600;
+        font-size: 1rem;
+        > span {
+          font-weight: lighter;
+          color: hsl(var(--Primary-300) / 0.8);
+          margin-left: 0.3rem;
+        }
+      }
+    }
+
+    .more__details {
+      //
+      @include breakpoint(medium) {
+        display: flex;
+        gap: 4rem;
+      }
+
+      @include breakpoint(large) {
+        justify-content: space-between;
+      }
+
+      .details__container:nth-child(2) {
+        margin-top: 2.5rem;
+
+        @include breakpoint(medium) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .border__details {
+      margin-top: 2.5rem;
+
+      > h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .borders__container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        .border__country {
+          background-color: hsl(var(--Primary-100));
+          padding-inline: 3em;
+          padding-top: 0.5em;
+          padding-bottom: 0.4em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@use "../functionSASS/function.scss" as *;
+
+.country {
+  border-radius: 0.4rem;
+  background-color: hsl(var(--Primary-100));
+  color: hsl(var(--Primary-300));
+
+  &__img {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 8;
+  }
+
+  &__info {
+    padding: 2em 0 2.5em 1.5em;
+
+    &--name {
+      font-size: 1.5rem;
+    }
+
+    > P + P {
+      margin-top: 0.3rem;
+    }
+
+    .country--data {
+      font-weight: 600;
+
+      > span {
+        font-weight: lighter;
+        color: hsl(var(--Primary-300) / 0.8);
+      }
+    }
+  }
+}

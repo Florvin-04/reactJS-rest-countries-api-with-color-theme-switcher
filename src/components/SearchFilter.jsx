@@ -5,7 +5,8 @@ import { useGlobalContext } from "../AppContext/AppContext";
 import { FaSearch, FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 function SearchFilter() {
-  const { options, allRegions } = useGlobalContext();
+  const { allRegions, searchCountry, setSearchCountry, searchByRegion, setSearchByRegion } =
+    useGlobalContext();
 
   const [region, setRegion] = useState("Filter by Region");
   const [toggle, setToggle] = useState(false);
@@ -27,6 +28,8 @@ function SearchFilter() {
             name="country"
             id="search__country"
             placeholder=""
+            value={searchCountry}
+            onChange={(e) => setSearchCountry(e.target.value)}
           />
           <span className="input__placeholder">
             <FaSearch />
@@ -36,32 +39,6 @@ function SearchFilter() {
       </form>
 
       <div>
-        {/* <label
-          htmlFor="region"
-          className="region__selection--parent"
-        >
-          <FaChevronDown className="arrow-down" />
-          <select
-            name="region"
-            id="region"
-            className="region__selection"
-            placeholder="Filter by Region"
-            onChange={(e) => setRegion(e.target.value)}
-            value={region}
-          >
-            <option value="">Filter by Region</option>
-            {allRegions.map((item, idx) => {
-              return (
-                <option
-                  value={item}
-                  key={idx}
-                >
-                  {item}
-                </option>
-              );
-            })}
-          </select>
-        </label> */}
         <label
           htmlFor="region"
           className="dropdown__region"
@@ -80,6 +57,7 @@ function SearchFilter() {
                   key={idx}
                   onClick={() => {
                     setRegion(item);
+                    setSearchByRegion(item);
                     setToggle(false);
                   }}
                 >

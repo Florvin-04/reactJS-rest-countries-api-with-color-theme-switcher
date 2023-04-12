@@ -5,8 +5,11 @@ import "./App.scss";
 
 import Countries from "./components/countries";
 import SearchFilter from "./components/SearchFilter";
+import CountryArticle from "./components/CountryArticle";
 
 function App() {
+  const [params, setParams] = useState(null);
+
   return (
     <div className="App">
       <header className="header">
@@ -18,12 +21,16 @@ function App() {
       </header>
 
       <main>
-        <SearchFilter />
+        {!params && <SearchFilter />}
 
         <Routes>
           <Route
             path="/"
-            element={<Countries />}
+            element={<Countries setParams={setParams}/>}
+          />
+          <Route
+            path="/:name"
+            element={<CountryArticle setParams={setParams} />}
           />
         </Routes>
       </main>

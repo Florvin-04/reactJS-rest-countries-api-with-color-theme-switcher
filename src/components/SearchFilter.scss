@@ -57,34 +57,39 @@
     }
   }
 
-  .region__selection--parent {
-    position: relative;
+  // .region__selection--parent {
+  //   position: relative;
 
-    .arrow-down {
-      color: hsl(var(--Primary-300));
-      position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
-      right: 10%;
-      pointer-events: none;
-    }
-    .region__selection {
-      padding: 1em 5em 1em 1em;
-      background-color: hsl(var(--Primary-100));
-      border-color: hsl(var(--Primary-100));
-      color: hsl(var(--Primary-300));
-      cursor: pointer;
-      border-radius: 0.5rem;
-      appearance: none;
-      font-size: 1.1rem;
-    }
-  }
+  //   .arrow-down {
+  //     color: hsl(var(--Primary-300));
+  //     position: absolute;
+  //     top: 50%;
+  //     transform: translate(0, -50%);
+  //     right: 10%;
+  //     pointer-events: none;
+  //   }
+  //   .region__selection {
+  //     padding: 1em 5em 1em 1em;
+  //     background-color: hsl(var(--Primary-100));
+  //     border-color: hsl(var(--Primary-100));
+  //     color: hsl(var(--Primary-300));
+  //     cursor: pointer;
+  //     border-radius: 0.5rem;
+  //     appearance: none;
+  //     font-size: 1.1rem;
+  //   }
+  // }
 
   .dropdown__region {
+    margin-top: 3rem;
     position: relative;
     // outline: 1px solid red;
     // width: 10rem;
     display: inline-block;
+
+    @include breakpoint(medium) {
+      margin-top: 0;
+    }
 
     .filter__region {
       padding: 1em 5em 1em 1em;
