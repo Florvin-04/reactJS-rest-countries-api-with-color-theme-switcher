@@ -52,6 +52,9 @@ body {
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
+a{
+  text-decoration: none;
+}
 
 /* Make images easier to work with */
 img,
@@ -90,13 +93,14 @@ select {
 
   /* light mode and dark mode */
   --Primary-300: 0 0% 100%;
-
+  
   /* light mode */
-
+  
   /* --Primary-300: 200 15% 8%; */
   /* --Primary-200: 0 0% 52%;
   --Primary-500: 0 0% 98%; */
-
+  
+  
   --fs-100: 14;
   --fs-200: 16;
 }
@@ -104,4 +108,10 @@ select {
 #root {
   background-color: hsl(var(--Primary-200));
   min-height: inherit;
+}
+
+body[data-theme="light"] {
+  --Primary-100: 0 0% 98%; 
+  --Primary-200: 0 0% 52%;
+  --Primary-300: 200 15% 8%;
 }

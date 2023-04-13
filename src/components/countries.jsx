@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./countries.scss";
 import Country from "./country";
 import { useGlobalContext } from "../AppContext/AppContext";
-
+import LoadingStateSkeleton from "./loadingStateSkeleton";
 function countries({ setParams }) {
   const { countries, loading } = useGlobalContext();
 
@@ -10,24 +10,22 @@ function countries({ setParams }) {
     setParams(null);
   }, []);
 
-  if (loading) {
-    return <h1>LOADING....</h1>;
-  }
-
   return (
     <div className="countries">
+      {/* {loading && <LoadingStateSkeleton cardsNum={8} />} */}
       {countries.length !== 0 ? (
-        countries.map((country) => {
+        countries.map((country, idx) => {
           return (
             <Country
-              key={country.name}
+              key={idx}
               {...country}
             />
           );
         })
       ) : (
-        <p>no country found</p>
+        <LoadingStateSkeleton cardsNum={8} />
       )}
+      {loading && <LoadingStateSkeleton cardsNum={8} />}
       {/* {countries.map((country) => {
         return (
           <Country

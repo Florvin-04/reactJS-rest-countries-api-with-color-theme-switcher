@@ -5,12 +5,17 @@
   background-color: hsl(var(--Primary-100));
   color: hsl(var(--Primary-300));
 
+  &:hover {
+    background-color: hsl(var(--Primary-300) / 0.1);
+  }
+
   &__img {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 16 / 8;
+    // aspect-ratio: 16 / 8;
+    height: 12rem;
   }
 
   &__info {

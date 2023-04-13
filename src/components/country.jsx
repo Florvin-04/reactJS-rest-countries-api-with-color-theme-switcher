@@ -17,7 +17,7 @@ function Country(country) {
           <h2 className="country__info--name">{country.name}</h2>
           <p className="country__info--population country--data">
             Population:
-            <span> {country.population}</span>
+            <span> {country.population.toLocaleString()}</span>
           </p>
           <p className="country__info--region country--data">
             Rgion:
