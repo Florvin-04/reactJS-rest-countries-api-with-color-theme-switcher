@@ -101,6 +101,7 @@ export const AppProvider = ({ children }) => {
         searchByRegion,
         setSearchByRegion,
         loading,
+        setLoading,
         toggle,
         setToggle,
       }}
